@@ -17,6 +17,16 @@
 			xsi:noNamespaceSchemaLocation="items.xsd">
 
 	<itemtypes>
+	
+		<itemtype code="Product" autocreate="false">
+			<attributes>
+				<attribute qualifier="additionalDescription" type="java.lang.String" generate="true">
+					<persistence type="property"/>
+					<modifiers read="true" write="true" optional="true"/>
+				</attribute>
+			</attributes>
+		</itemtype>
+	
 <!--
 		<itemtype generate="true"
 		   code="MyProduct"
