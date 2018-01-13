@@ -16,8 +16,19 @@
 <items 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 			xsi:noNamespaceSchemaLocation="items.xsd">
 
+	<relations>
+		<relation code="ProductBundleToProduct" localized="false" autocreate="true" generate="true">
+			<sourceElement type="ProductBundle" qualifier="bundle" cardinality="one">
+				<modifiers read="true" write="true" search="true" optional="true"/>
+			</sourceElement>
+			<targetElement type="Product" qualifier="product" cardinality="many" collectiontype="set" ordered="false">
+				<modifiers read="true" write="true" search="true" optional="true" partof="true"/>
+			</targetElement>	
+		</relation>	
+	</relations>		
+			
 	<itemtypes>
-	
+		
 		<itemtype code="Product" autocreate="false">
 			<attributes>
 				<attribute qualifier="additionalDescription" type="java.lang.String" generate="true">
@@ -25,6 +36,10 @@
 					<modifiers read="true" write="true" optional="true"/>
 				</attribute>
 			</attributes>
+		</itemtype>
+		
+		<itemtype code="ProductBundle" extends="Product"
+				  autocreate="true" generate="true">
 		</itemtype>
 	
 <!--
