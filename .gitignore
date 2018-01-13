@@ -7,3 +7,5 @@ myextension/resources/beans.xsd
 myextension/resources/items.xsd
 myextension/resources/myextension/myextension-testclasses.xml
 myextension/web/webroot/WEB-INF/classes/
+myextension/src/mypackage/jalo/
+myextension/eclipsebin/
