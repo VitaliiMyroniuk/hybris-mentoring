@@ -89,5 +89,7 @@
         <property name="mediaService" ref="mediaService"/>
         <property name="flexibleSearchService" ref="flexibleSearchService"/>
     </bean>
+	
+	<bean id="customerDescriptionAttributeHandler" class="mypackage.handler.CustomerDescriptionAttributeHandler"/>
 			
 </beans>

@@ -41,6 +41,19 @@
 		<itemtype code="ProductBundle" extends="Product"
 				  autocreate="true" generate="true">
 		</itemtype>
+		
+		<itemtype code="Customer" autocreate="false">
+			<attributes>
+				<attribute qualifier="email" type="java.lang.String" generate="true">
+					<persistence type="property"/>
+					<modifiers read="true" write="true"/>
+				</attribute>
+				<attribute qualifier="customerDescription" type="java.lang.String" generate="true">
+					<persistence type="dynamic" attributeHandler="customerDescriptionAttributeHandler"/>
+					<modifiers read="true" write="false"/>
+				</attribute>
+			</attributes>
+		</itemtype>
 	
 <!--
 		<itemtype generate="true"
