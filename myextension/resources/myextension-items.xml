@@ -21,7 +21,7 @@
 			<sourceElement type="ProductBundle" qualifier="bundle" cardinality="one">
 				<modifiers read="true" write="true" search="true" optional="true"/>
 			</sourceElement>
-			<targetElement type="Product" qualifier="product" cardinality="many" collectiontype="set" ordered="false">
+			<targetElement type="Product" qualifier="products" cardinality="many" collectiontype="set" ordered="false">
 				<modifiers read="true" write="true" search="true" optional="true" partof="true"/>
 			</targetElement>	
 		</relation>	
