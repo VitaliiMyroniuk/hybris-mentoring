@@ -14,14 +14,16 @@
       <!-- for more information on maven managed libraries please consult https://wiki.hybris.com/x/Nq8sDQ -->
                
       <!-- you should add all required extensions to this list, except platform extensions which are automatically required -->         
-      <!-- <requires-extension name="cms"/> -->         
-      
+      <!-- <requires-extension name="cms"/> -->
 
-      <coremodule generated="true" manager="org.training.jalo.MyextensionhmcManager" packageroot="org.training"/>
+       <requires-extension name="hmc"/>
 
-      <webmodule jspcompile="false" webroot="/myextensionhmc"/>
-					
-	
+       <coremodule generated="true" manager="org.training.jalo.MyextensionhmcManager" packageroot="org.training"/>
+
+       <!--<webmodule jspcompile="false" webroot="/myextensionhmc"/>-->
+
+       <hmcmodule extensionclassname="org.training.myextension.hmc.MyextensionHMCExtension"/>
+
 
    </extension>
       

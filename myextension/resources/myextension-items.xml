@@ -54,6 +54,17 @@
 				</attribute>
 			</attributes>
 		</itemtype>
+
+        <itemtype code="ImageMedia" extends="Media"
+                  jaloclass="org.training.jalo.ImageMedia"
+                  autocreate="true" generate="true">
+            <attributes>
+                <attribute qualifier="topic" type="java.lang.String">
+                    <persistence type="property"/>
+                    <modifiers read="true" write="true" optional="true"/>
+                </attribute>
+            </attributes>
+        </itemtype>
 	
 <!--
 		<itemtype generate="true"
