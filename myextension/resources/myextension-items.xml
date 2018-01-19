@@ -65,7 +65,43 @@
                 </attribute>
             </attributes>
         </itemtype>
-	
+
+        <itemtype code="Supplier"
+                  jaloclass="org.training.jalo.Supplier"
+                  autocreate="true" generate="true">
+            <deployment table="Supplier" typecode="15000" propertytable="SuppliersProps"/>
+            <custom-properties>
+                <!-- marking the type as synchronizing capable here: -->
+                <property name="catalogItemType">
+                    <value>java.lang.Boolean.TRUE</value>
+                </property>
+
+                <!-- define catalog version attribute here: -->
+                <property name="catalogVersionAttributeQualifier">
+                    <value>"catalogVersion"</value>
+                </property>
+
+                <!-- define unique key attributes here; separate multiple attribute qualifiers by commas: -->
+                <property name="uniqueKeyAttributeQualifier">
+                    <value>"name"</value>
+                </property>
+            </custom-properties>
+            <attributes>
+                <attribute qualifier="name" type="java.lang.String" autocreate="true" generate="true">
+                    <persistence type="property"/>
+                    <modifiers read="true" write="true" search="true" initial="true" optional="false"/>
+                </attribute>
+                <attribute qualifier="description" type="java.lang.String" autocreate="true" generate="true">
+                    <persistence type="property"/>
+                    <modifiers read="true" write="true" search="true" initial="true" optional="false"/>
+                </attribute>
+                <attribute qualifier="catalogVersion" type="CatalogVersion" autocreate="true" generate="true">
+                    <persistence type="property"/>
+                    <modifiers read="true" write="false" search="true" initial="true" optional="false"/>
+                </attribute>
+            </attributes>
+        </itemtype>
+
 <!--
 		<itemtype generate="true"
 		   code="MyProduct"

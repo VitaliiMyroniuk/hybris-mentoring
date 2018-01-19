@@ -7,6 +7,9 @@
         <group name="medias" mode="append">
             <typeref type="ImageMedia" description="type.ImageMedia.description"/>
         </group>
+        <group name="user" mode="append">
+            <typeref type="Supplier" description="type.Supplier.description"/>
+        </group>
     </explorertree>
 
     <type name="ImageMedia" mode="append">
@@ -41,5 +44,40 @@
             </editor>
         </organizer>
     </type>
+
+    <type name="Supplier" mode="append">
+        <organizer>
+            <search mode="replace">
+                <condition attribute="name"/>
+                <condition attribute="description"/>
+                <condition attribute="catalogVersion"/>
+            </search>
+            <result>
+                <listview mode="replace">
+                    <itemlayout>
+                        <attribute name="name"/>
+                        <attribute name="description"/>
+                        <attribute name="catalogVersion"/>
+                    </itemlayout>
+                </listview>
+            </result>
+            <editor>
+                <essentials>
+                    <listlayout>
+                        <attribute name="name"/>
+                        <attribute name="description"/>
+                    </listlayout>
+                </essentials>
+                <tab name="tab.general">
+                    <section name="section.catalog.version">
+                        <listlayout>
+                            <attribute name="catalogVersion"/>
+                        </listlayout>
+                    </section>
+                </tab>
+            </editor>
+        </organizer>
+    </type>
+
 
 </configuration>
