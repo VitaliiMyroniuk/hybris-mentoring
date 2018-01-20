@@ -93,7 +93,7 @@
                 </attribute>
                 <attribute qualifier="description" type="java.lang.String" autocreate="true" generate="true">
                     <persistence type="property"/>
-                    <modifiers read="true" write="true" search="true" initial="true" optional="false"/>
+                    <modifiers read="true" write="true" search="true" initial="true"/>
                 </attribute>
                 <attribute qualifier="catalogVersion" type="CatalogVersion" autocreate="true" generate="true">
                     <persistence type="property"/>
