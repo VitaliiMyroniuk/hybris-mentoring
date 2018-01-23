@@ -69,7 +69,7 @@
         <itemtype code="Supplier"
                   jaloclass="org.training.jalo.Supplier"
                   autocreate="true" generate="true">
-            <deployment table="Supplier" typecode="15000" propertytable="SuppliersProps"/>
+            <deployment table="Supplier" typecode="15000"/>
             <custom-properties>
                 <!-- marking the type as synchronizing capable here: -->
                 <property name="catalogItemType">
