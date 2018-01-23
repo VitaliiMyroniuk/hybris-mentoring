@@ -1,4 +1,4 @@
-package mypackage.handler;
+package org.training.handler;
 
 import de.hybris.platform.core.model.order.OrderModel;
 import de.hybris.platform.core.model.user.CustomerModel;

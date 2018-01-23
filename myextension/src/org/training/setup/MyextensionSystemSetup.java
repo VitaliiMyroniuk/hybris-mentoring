@@ -8,16 +8,14 @@
  * Information and shall use it only in accordance with the terms of the
  * license agreement you entered into with SAP.
  */
-package mypackage.setup;
-
-import static mypackage.constants.MyextensionConstants.PLATFORM_LOGO_CODE;
+package org.training.setup;
 
 import de.hybris.platform.core.initialization.SystemSetup;
 
 import java.io.InputStream;
 
-import mypackage.constants.MyextensionConstants;
-import mypackage.service.MyextensionService;
+import org.training.constants.MyextensionConstants;
+import org.training.service.MyextensionService;
 
 
 @SystemSetup(extension = MyextensionConstants.EXTENSIONNAME)
@@ -33,7 +31,7 @@ public class MyextensionSystemSetup
 	@SystemSetup(process = SystemSetup.Process.INIT, type = SystemSetup.Type.ESSENTIAL)
 	public void createEssentialData()
 	{
-		myextensionService.createLogo(PLATFORM_LOGO_CODE);
+		myextensionService.createLogo(MyextensionConstants.PLATFORM_LOGO_CODE);
 	}
 
 	private InputStream getImageStream()

@@ -8,10 +8,10 @@
  * Information and shall use it only in accordance with the terms of the
  * license agreement you entered into with SAP.
  */
-package mypackage.service.impl;
+package org.training.service.impl;
 
 import static org.fest.assertions.Assertions.assertThat;
-import static mypackage.constants.MyextensionConstants.PLATFORM_LOGO_CODE;
+import static org.training.constants.MyextensionConstants.PLATFORM_LOGO_CODE;
 
 import de.hybris.bootstrap.annotations.IntegrationTest;
 import de.hybris.platform.core.model.media.MediaModel;
@@ -23,8 +23,7 @@ import javax.annotation.Resource;
 
 import org.junit.Before;
 import org.junit.Test;
-import mypackage.service.MyextensionService;
-import mypackage.service.impl.DefaultMyextensionService;
+import org.training.service.MyextensionService;
 
 
 /**

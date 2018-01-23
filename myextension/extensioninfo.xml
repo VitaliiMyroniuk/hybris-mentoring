@@ -17,7 +17,7 @@
       <!-- <requires-extension name="cms"/> -->         
       
 
-      <coremodule generated="true" manager="mypackage.jalo.MyextensionManager" packageroot="mypackage"/>
+      <coremodule generated="true" manager="org.training.jalo.MyextensionManager" packageroot="org.training"/>
 
       <webmodule jspcompile="false" webroot="/myextension"/>
 					

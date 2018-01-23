@@ -8,9 +8,9 @@
  * Information and shall use it only in accordance with the terms of the
  * license agreement you entered into with SAP.
  */
-package mypackage.controller;
+package org.training.controller;
 
-import static mypackage.constants.MyextensionConstants.PLATFORM_LOGO_CODE;
+import static org.training.constants.MyextensionConstants.PLATFORM_LOGO_CODE;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,7 +18,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import mypackage.service.MyextensionService;
+import org.training.service.MyextensionService;
 
 
 @Controller

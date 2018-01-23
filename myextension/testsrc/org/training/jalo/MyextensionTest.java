@@ -8,7 +8,7 @@
  * Information and shall use it only in accordance with the terms of the
  * license agreement you entered into with SAP.
  */
-package mypackage.jalo;
+package org.training.jalo;
 
 import static org.fest.assertions.Assertions.assertThat;
 import static org.junit.Assert.assertTrue;

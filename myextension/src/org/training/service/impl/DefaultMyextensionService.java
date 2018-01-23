@@ -8,7 +8,7 @@
  * Information and shall use it only in accordance with the terms of the
  * license agreement you entered into with SAP.
  */
-package mypackage.service.impl;
+package org.training.service.impl;
 
 import de.hybris.platform.catalog.model.CatalogUnawareMediaModel;
 import de.hybris.platform.core.model.media.MediaModel;
@@ -25,7 +25,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Required;
 
-import mypackage.service.MyextensionService;
+import org.training.service.MyextensionService;
 
 
 public class DefaultMyextensionService implements MyextensionService

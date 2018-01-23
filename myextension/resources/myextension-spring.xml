@@ -78,18 +78,18 @@
 	       <aop:pointcut id="profiledMethods" expression="execution(* *(..))" />	
 	  -->
 	
-    <bean id="myextensionSystemSetup" class="mypackage.setup.MyextensionSystemSetup">
+    <bean id="myextensionSystemSetup" class="org.training.setup.MyextensionSystemSetup">
         <!-- constructor arg injection example -->
         <constructor-arg ref="myextensionService"/>
     </bean>
 
-    <bean id="myextensionService" class="mypackage.service.impl.DefaultMyextensionService">
+    <bean id="myextensionService" class="org.training.service.impl.DefaultMyextensionService">
         <!-- setter injection example -->
         <property name="modelService" ref="modelService"/>
         <property name="mediaService" ref="mediaService"/>
         <property name="flexibleSearchService" ref="flexibleSearchService"/>
     </bean>
 	
-	<bean id="customerDescriptionAttributeHandler" class="mypackage.handler.CustomerDescriptionAttributeHandler"/>
+	<bean id="customerDescriptionAttributeHandler" class="org.training.handler.CustomerDescriptionAttributeHandler"/>
 			
 </beans>
