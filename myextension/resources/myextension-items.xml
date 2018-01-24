@@ -29,7 +29,7 @@
 			
 	<itemtypes>
 		
-		<itemtype code="Product" autocreate="false">
+		<itemtype code="Product" autocreate="false" generate="false">
 			<attributes>
 				<attribute qualifier="additionalDescription" type="java.lang.String" generate="true">
 					<persistence type="property"/>
@@ -42,7 +42,7 @@
 				  autocreate="true" generate="true">
 		</itemtype>
 		
-		<itemtype code="Customer" autocreate="false">
+		<itemtype code="Customer" autocreate="false" generate="false">
 			<attributes>
 				<attribute qualifier="email" type="java.lang.String" generate="true">
 					<persistence type="property"/>
