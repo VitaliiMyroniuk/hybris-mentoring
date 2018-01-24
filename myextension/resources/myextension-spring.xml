@@ -10,12 +10,15 @@
  license agreement you entered into with SAP.
 -->
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:aop="http://www.springframework.org/schema/aop"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
            http://www.springframework.org/schema/beans/spring-beans.xsd
            http://www.springframework.org/schema/aop
-           http://www.springframework.org/schema/aop/spring-aop.xsd">
+           http://www.springframework.org/schema/aop/spring-aop.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context.xsd">
 
 	<!--
 	The hybris platform provides one single Spring application context for beans located at the jalo layer.
@@ -77,7 +80,9 @@
 	      	            !execution(* getPK(..))" />  	            
 	       <aop:pointcut id="profiledMethods" expression="execution(* *(..))" />	
 	  -->
-	
+
+    <context:component-scan base-package="org.training"/>
+
     <bean id="myextensionSystemSetup" class="org.training.setup.MyextensionSystemSetup">
         <!-- constructor arg injection example -->
         <constructor-arg ref="myextensionService"/>
@@ -91,5 +96,7 @@
     </bean>
 	
 	<bean id="customerDescriptionAttributeHandler" class="org.training.handler.CustomerDescriptionAttributeHandler"/>
+
+    <bean id="productModelDao" class="org.training.dao.impl.ProductModelDaoImpl"/>
 			
 </beans>
