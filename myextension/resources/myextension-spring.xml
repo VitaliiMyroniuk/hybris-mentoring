@@ -98,5 +98,7 @@
 	<bean id="customerDescriptionAttributeHandler" class="org.training.handler.CustomerDescriptionAttributeHandler"/>
 
     <bean id="productModelDao" class="org.training.dao.impl.ProductModelDaoImpl"/>
+
+    <bean id="mediaModelDao" class="org.training.dao.impl.MediaModelDaoImpl"/>
 			
 </beans>
