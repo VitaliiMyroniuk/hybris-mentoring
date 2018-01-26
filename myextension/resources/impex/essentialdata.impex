@@ -1,2 +1,6 @@
 UPDATE Customer[batchmode=true];itemtype(code)[unique=true];sessionLanguage(isocode);
 ;"Customer";"en";
+
+#INSERT Category;code[unique=true];catalogVersion(version);name;
+#;Clothes;Staged;Winter clothes;
+#;Clothes;Staged;Summer clothes;
