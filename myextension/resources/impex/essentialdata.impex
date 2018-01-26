@@ -3,3 +3,6 @@ UPDATE Customer[batchmode=true];itemtype(code)[unique=true];sessionLanguage(isoc
 
 #UPDATE Product;code[unique=true];supercategories(code)[mode=append];
 #;computer;Second Category;
+
+#INSERT Product;code[cellDecorator=org.training.decorator.ProductCodeDecorator, unique=true];catalogVersion(version);
+#;IPhone X;Staged;
