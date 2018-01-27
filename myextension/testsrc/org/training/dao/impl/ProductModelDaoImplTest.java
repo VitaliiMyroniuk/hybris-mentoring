@@ -11,12 +11,18 @@ import org.junit.Before;
 import org.junit.Test;
 import org.training.dao.ProductModelDao;
 import javax.annotation.Resource;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 @IntegrationTest
 public class ProductModelDaoImplTest extends ServicelayerTransactionalTest {
 
-    private static final String PRODUCT_CODE = "computer";
+    private static final String CATALOG_ID = "1";
+
+    private static final String CATALOG_VERSION = "Winter";
+
+    private static final String PRODUCT_CODE = "Computer";
+
+    private static final String NON_EXISTING_PRODUCT_CODE = "Phone";
 
     @Resource
     private ProductModelDao productModelDao;
@@ -29,11 +35,12 @@ public class ProductModelDaoImplTest extends ServicelayerTransactionalTest {
     @Before
     public void setup() {
         CatalogModel catalog = new CatalogModel();
-        catalog.setId("1");
+        catalog.setId(CATALOG_ID);
         modelService.save(catalog);
+
         catalogVersion = new CatalogVersionModel();
         catalogVersion.setCatalog(catalog);
-        catalogVersion.setVersion("Winter");
+        catalogVersion.setVersion(CATALOG_VERSION);
         modelService.save(catalogVersion);
     }
 
@@ -51,6 +58,6 @@ public class ProductModelDaoImplTest extends ServicelayerTransactionalTest {
 
     @Test(expected = ModelNotFoundException.class)
     public void shouldProduceModelNotFoundException() {
-        productModelDao.findProductModelByCodeAndCatalogVersion("phone", catalogVersion);
+        productModelDao.findProductModelByCodeAndCatalogVersion(NON_EXISTING_PRODUCT_CODE, catalogVersion);
     }
 }
