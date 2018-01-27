@@ -17,9 +17,17 @@ import static org.junit.Assert.assertEquals;
 @IntegrationTest
 public class MediaModelDaoImplTest extends ServicelayerTransactionalTest {
 
-    private static final String PRODUCT_CODE = "computer";
+    private static final String CATALOG_ID = "1";
+
+    private static final String CATALOG_VERSION = "Winter";
+
+    private static final String MEDIA_CODE = "Computer Media";
 
     private static final String MEDIA_DESCRIPTION = "Computer for the software development";
+
+    private static final String PRODUCT_CODE = "Computer";
+
+    private static final String NON_EXISTING_PRODUCT_CODE = "Phone";
 
     @Resource
     private MediaModelDao mediaModelDao;
@@ -32,19 +40,16 @@ public class MediaModelDaoImplTest extends ServicelayerTransactionalTest {
     @Before
     public void setup() {
         CatalogModel catalog = new CatalogModel();
-        catalog.setId("1");
+        catalog.setId(CATALOG_ID);
         modelService.save(catalog);
 
         catalogVersion = new CatalogVersionModel();
         catalogVersion.setCatalog(catalog);
-        catalogVersion.setVersion("Winter");
+        catalogVersion.setVersion(CATALOG_VERSION);
         modelService.save(catalogVersion);
-    }
 
-    @Test
-    public void shouldReturnMediaDescriptionByProductCodeAndCatalogVersion() {
         MediaModel media = new MediaModel();
-        media.setCode(PRODUCT_CODE);
+        media.setCode(MEDIA_CODE);
         media.setCatalogVersion(catalogVersion);
         media.setDescription(MEDIA_DESCRIPTION);
         modelService.save(media);
@@ -54,7 +59,10 @@ public class MediaModelDaoImplTest extends ServicelayerTransactionalTest {
         product.setCatalogVersion(catalogVersion);
         product.setPicture(media);
         modelService.save(product);
+    }
 
+    @Test
+    public void shouldReturnMediaDescriptionByProductCodeAndCatalogVersion() {
         String actualMediaDescription =
                 mediaModelDao.findMediaDescriptionByProductCodeAndCatalogVersion(PRODUCT_CODE, catalogVersion);
 
@@ -63,6 +71,6 @@ public class MediaModelDaoImplTest extends ServicelayerTransactionalTest {
 
     @Test(expected = ModelNotFoundException.class)
     public void shouldProduceModelNotFoundException() {
-        mediaModelDao.findMediaDescriptionByProductCodeAndCatalogVersion("phone", catalogVersion);
+        mediaModelDao.findMediaDescriptionByProductCodeAndCatalogVersion(NON_EXISTING_PRODUCT_CODE, catalogVersion);
     }
 }
