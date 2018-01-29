@@ -102,6 +102,16 @@
             </attributes>
         </itemtype>
 
+        <itemtype code="User" autocreate="false" generate="false">
+            <attributes>
+                <attribute qualifier="dateOfBirth" type="java.util.Date">
+                    <modifiers initial="true" optional="false"/>
+                    <persistence type="property"/>
+                </attribute>
+            </attributes>
+        </itemtype>
+
+
 <!--
 		<itemtype generate="true"
 		   code="MyProduct"

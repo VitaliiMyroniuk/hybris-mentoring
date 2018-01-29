@@ -100,5 +100,15 @@
     <bean id="productModelDao" class="org.training.dao.impl.ProductModelDaoImpl"/>
 
     <bean id="mediaModelDao" class="org.training.dao.impl.MediaModelDaoImpl"/>
+
+    <bean id="userAgeValidateInterceptor" class="org.training.interceptor.UserAgeValidateInterceptor">
+        <constructor-arg value="12"/>
+    </bean>
+
+    <bean id="userAgeValidateInterceptorMapping"
+          class="de.hybris.platform.servicelayer.interceptor.impl.InterceptorMapping">
+        <property name="interceptor" ref="userAgeValidateInterceptor"/>
+        <property name="typeCode" value="User"/>
+    </bean>
 			
 </beans>
