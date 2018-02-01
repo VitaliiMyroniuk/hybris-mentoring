@@ -190,4 +190,12 @@
 	</bean>
 
 	<bean id="genderData" class="org.training.facades.product.data.GenderData" scope="prototype"/>
+
+    <bean id="daysBeforeOfflineProductPopulator" class="org.training.facades.populators.DaysBeforeOfflineProductPopulator"/>
+
+    <bean parent="modifyPopulatorList">
+        <property name="list" ref="productConverter"/>
+        <property name="add" ref="daysBeforeOfflineProductPopulator"/>
+    </bean>
+
 </beans>
