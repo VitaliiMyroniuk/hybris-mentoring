@@ -207,4 +207,9 @@
 		<property name="add" ref="additionalDescriptionProductPopulator"/>
 	</bean>
 
+    <alias name="customProductFacade" alias="productVariantFacade"/>
+    <bean id="customProductFacade" class="org.training.facades.impl.CustomProductFacade" parent="defaultProductFacade">
+		<property name="minRating" value="2"/>
+    </bean>
+
 </beans>
