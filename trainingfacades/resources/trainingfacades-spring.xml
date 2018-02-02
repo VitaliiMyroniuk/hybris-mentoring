@@ -198,4 +198,13 @@
         <property name="add" ref="daysBeforeOfflineProductPopulator"/>
     </bean>
 
+	<bean name="additionalDescriptionProductPopulator" class="org.training.facades.populators.AdditionalDescriptionProductPopulator"/>
+
+	<bean parent="configurablePopulatorModification">
+		<property name="target" ref="defaultProductConfiguredPopulator"/>
+		<property name="keyType" value="de.hybris.platform.commercefacades.product.ProductOption"/>
+		<property name="key" value="ADDITIONAL_DESCRIPTION"/>
+		<property name="add" ref="additionalDescriptionProductPopulator"/>
+	</bean>
+
 </beans>

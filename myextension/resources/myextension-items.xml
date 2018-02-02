@@ -31,7 +31,7 @@
 		
 		<itemtype code="Product" autocreate="false" generate="false">
 			<attributes>
-				<attribute qualifier="additionalDescription" type="java.lang.String" generate="true">
+				<attribute qualifier="additionalDescription" type="java.lang.String">
 					<persistence type="property"/>
 					<modifiers read="true" write="true" optional="true"/>
 				</attribute>

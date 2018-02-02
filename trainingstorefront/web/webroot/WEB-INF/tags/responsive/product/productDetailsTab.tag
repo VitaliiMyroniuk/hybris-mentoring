@@ -15,4 +15,6 @@
 	    <br><spring:theme code="product.product.details.future.days" arguments="${product.daysBeforeOffline}"/>
 	</c:if>
 
+	<br><br>${product.additionalDescription}
+
 </div>
