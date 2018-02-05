@@ -1,10 +1,10 @@
-package org.training.dao;
+package org.training.service;
 
 import de.hybris.platform.catalog.model.CatalogVersionModel;
 import de.hybris.platform.core.model.product.ProductModel;
 import java.util.List;
 
-public interface ProductModelDao {
+public interface ProductModelService {
 
     ProductModel findProductModelByCodeAndCatalogVersion(String code, CatalogVersionModel catalogVersion);
 

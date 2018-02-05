@@ -110,5 +110,13 @@
         <property name="interceptor" ref="userAgeValidateInterceptor"/>
         <property name="typeCode" value="User"/>
     </bean>
+
+    <bean id="productModelService" class="org.training.service.impl.ProductModelServiceImpl"/>
+
+    <bean id="exportProductCodesJob" class="org.training.job.ExportProductCodesJob" autowire="byName">
+        <property name="productModelService" ref="productModelService"/>
+        <property name="daysBeforeOffline" value="5"/>
+        <property name="path" value="C:\Users\Vitalii_Myroniuk\Desktop\product_codes.scv"/>
+    </bean>
 			
 </beans>
