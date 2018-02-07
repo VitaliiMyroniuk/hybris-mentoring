@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<list-view unassigned-group-name="Other">
+    <group name="General">
+        <property qualifier="Product.code" visible="true"/>
+        <property qualifier="Product.name" visible="true"/>
+        <property qualifier="Product.description" visible="true"/>
+        <property qualifier="Product.metaInfo" visible="true"/>
+    </group>
+</list-view>
