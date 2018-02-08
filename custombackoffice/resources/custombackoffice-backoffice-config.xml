@@ -24,4 +24,28 @@
         </yss:simple-search>
     </context>
 
+    <context component="create-wizard" type="Customer">
+        <wz:flow xmlns:wz="http://www.hybris.com/cockpitng/config/wizard-config"
+                 id="CustomerWizard"
+                 title="create.title(ctx.TYPE_CODE)">
+            <wz:step id="step1" label="create.customer.essential.label" sublabel="create.customer.essential.sublabel">
+                <wz:content id="step1.content">
+                    <wz:property-list root="newCust">
+                        <wz:property qualifier="referredBy" type="java.lang.String"/>
+                    </wz:property-list>
+                </wz:content>
+            </wz:step>
+        </wz:flow>
+    </context>
+
+    <context type="Customer" parent="User" component="editor-area">
+        <editorArea:editorArea xmlns:editorArea="http://www.hybris.com/cockpitng/component/editorArea">
+            <editorArea:tab name="referredBy">
+                <editorArea:section name="referredBy">
+                    <editorArea:attribute qualifier="referredBy"/>
+                </editorArea:section>
+            </editorArea:tab>
+        </editorArea:editorArea>
+    </context>
+
 </config>
