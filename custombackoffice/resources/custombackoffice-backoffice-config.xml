@@ -17,4 +17,11 @@
 		<!--Please check documentation for code snippets for specific components-->
 	<!--</context>-->
 
+    <context type="Customer" component="simple-search">
+        <yss:simple-search xmlns:yss="http://www.hybris.com/cockpitng/config/simplesearch">
+            <yss:field name="customerID"/>
+            <yss:sort-field name="uid" asc="true"/>
+        </yss:simple-search>
+    </context>
+
 </config>
