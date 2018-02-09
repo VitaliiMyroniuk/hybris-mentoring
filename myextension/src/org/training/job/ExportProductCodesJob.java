@@ -10,8 +10,11 @@ import de.hybris.platform.util.CSVWriter;
 import org.training.service.ProductModelService;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.*;
-
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class ExportProductCodesJob extends AbstractJobPerformable<CronJobModel> {
 
@@ -36,6 +39,14 @@ public class ExportProductCodesJob extends AbstractJobPerformable<CronJobModel> 
         return new PerformResult(CronJobResult.SUCCESS, CronJobStatus.FINISHED);
     }
 
+    private Map<Integer, String> getMapOfProductCodes(List<ProductModel> productModels) {
+        Map<Integer, String> result = new HashMap<>();
+        for (int i = 0; i < productModels.size(); i++) {
+            result.put(i, productModels.get(i).getCode());
+        }
+        return result;
+    }
+
     public ProductModelService getProductModelService() {
         return productModelService;
     }
@@ -58,13 +69,5 @@ public class ExportProductCodesJob extends AbstractJobPerformable<CronJobModel> 
 
     public void setPath(String path) {
         this.path = path;
-    }
-
-    private Map<Integer, String> getMapOfProductCodes(List<ProductModel> productModels) {
-        Map<Integer, String> result = new HashMap<>();
-        for (int i = 0; i < productModels.size(); i++) {
-            result.put(i, productModels.get(i).getCode());
-        }
-        return result;
     }
 }
