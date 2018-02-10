@@ -7,8 +7,8 @@ myextensionhmc/hmc/bin/
 myextensionhmc/hmc/classes/
 myextensionhmc/hmc/resources/hmc.xsd
 myextensionhmc/resources/myextensionhmc/myextensionhmc-hmctestclasses.xml
-custombackoffice/backoffice/classes/
 customproductcockpit/web/webroot/cockpit/
+custombackoffice/backoffice/classes/
 
 */build.xml
 */classes/
