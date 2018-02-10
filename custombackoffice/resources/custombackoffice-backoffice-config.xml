@@ -24,6 +24,15 @@
         </yss:simple-search>
     </context>
 
+    <context type="Customer" parent="User" component="listview">
+        <list:list-view xmlns:list="http://www.hybris.com/cockpitng/component/listView">
+            <list:column qualifier="uid"/>
+            <list:column qualifier="name"/>
+            <list:column qualifier="customerID"/>
+            <list:column qualifier="referredBy"/>
+        </list:list-view>
+    </context>
+
     <context component="create-wizard" type="Customer">
         <wz:flow xmlns:wz="http://www.hybris.com/cockpitng/config/wizard-config"
                  id="CustomerWizard"
