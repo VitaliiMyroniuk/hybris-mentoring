@@ -552,4 +552,17 @@
 		<property name="itemCleanupHooks" ref="csTicketRetentionHooks"/>
 		<property name="ticketBusinessService" ref="ticketBusinessService"/>
 	</bean>
+
+	<!-- Registration jobs -->
+	<bean id="registrationConfirmationActionJob" class="org.training.core.workflow.RegistrationConfirmationActionJob">
+		<property name="modelService" ref="modelService" />
+	</bean>
+
+	<bean id="registrationDeclineActionJob" class="org.training.core.workflow.RegistrationDeclineActionJob">
+		<property name="modelService" ref="modelService" />
+	</bean>
+
+	<alias name="customUserModelService" alias="customerAccountService"/>
+	<bean id="customUserModelService" class="org.training.core.service.UserModelService" parent="defaultCustomerAccountService"/>
+
 </beans>

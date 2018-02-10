@@ -101,6 +101,7 @@
 
     <bean id="mediaModelDao" class="org.training.dao.impl.MediaModelDaoImpl"/>
 
+    <!--
     <bean id="userAgeValidateInterceptor" class="org.training.interceptor.UserAgeValidateInterceptor">
         <constructor-arg value="12"/>
     </bean>
@@ -110,6 +111,7 @@
         <property name="interceptor" ref="userAgeValidateInterceptor"/>
         <property name="typeCode" value="User"/>
     </bean>
+    -->
 
     <bean id="productModelService" class="org.training.service.impl.ProductModelServiceImpl"/>
 

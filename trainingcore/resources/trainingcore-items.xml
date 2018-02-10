@@ -39,6 +39,21 @@
 
         <!-- Add your item definitions here -->
 
+        <itemtype code="Customer" autocreate="false" generate="false">
+            <attributes>
+                <attribute qualifier="confirmed" type="boolean">
+                    <persistence type="property"/>
+                    <modifiers optional="false"/>
+                    <defaultvalue>false</defaultvalue>
+                </attribute>
+                <attribute autocreate="true" qualifier="loginDisabled" type="boolean" redeclare="true">
+                    <modifiers read="true" write="true" search="true" optional="false"/>
+                    <persistence type="property"/>
+                    <defaultvalue>true</defaultvalue>
+                    <description>Determines whether user is allowed to login to system.</description>
+                </attribute>
+            </attributes>
+        </itemtype>
 
         <!-- TypeGroups are for structure of this file only -->
 
