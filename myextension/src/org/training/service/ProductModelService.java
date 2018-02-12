@@ -10,4 +10,5 @@ public interface ProductModelService {
 
     List<ProductModel> findProductsThatBecomeOffline(int days);
 
+    void updateManufacturerNameForProducts(String manufacturerName, List<ProductModel> products);
 }

@@ -113,7 +113,8 @@
     </bean>
     -->
 
-    <bean id="productModelService" class="org.training.service.impl.ProductModelServiceImpl"/>
+    <alias name="productModelService" alias="productService"/>
+    <bean id="productModelService" class="org.training.service.impl.ProductModelServiceImpl" parent="defaultProductService"/>
 
     <bean id="exportProductCodesJob" class="org.training.job.ExportProductCodesJob" autowire="byName">
         <property name="productModelService" ref="productModelService"/>
