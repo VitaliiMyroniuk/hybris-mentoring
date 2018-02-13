@@ -60,6 +60,10 @@
                     <persistence type="property"/>
                     <modifiers optional="true"/>
                 </attribute>
+                <attribute qualifier="age" type="java.lang.Integer" generate="true">
+                    <persistence type="property"/>
+                    <modifiers optional="true"/>
+                </attribute>
 			</attributes>
 		</itemtype>
 

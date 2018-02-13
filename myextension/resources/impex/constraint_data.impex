@@ -1,0 +1,2 @@
+INSERT_UPDATE MinConstraint; id[unique=true,allownull=true]; descriptor(enclosingType(code),qualifier); qualifier[allownull=true]; value; severity(code,itemtype(code)); target[allownull=true]                          ; type(code); message[lang=en]
+                           ; CustomerAgeConstraint         ; Customer:age                             ; age                      ; 18   ; ERROR:Severity               ; de.hybris.platform.core.model.user.CustomerModel; Customer  ; Customer must be at least {value} years old
