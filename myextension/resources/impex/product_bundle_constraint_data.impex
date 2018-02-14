@@ -1,0 +1,5 @@
+INSERT_UPDATE SizeConstraint; id[unique=true,allownull=true]; descriptor(enclosingType(code),qualifier); qualifier[allownull=true]; min; max; severity(code,itemtype(code)); target[allownull=true]               ; type(code)   ; message[lang=en];
+                            ; ProductBundleSizeConstraint   ; ProductBundle:products                   ; products                 ; 0  ; 10 ; ERROR:Severity               ; org.training.model.ProductBundleModel; ProductBundle; Product bundle should have from {min} to {max} products;
+
+INSERT_UPDATE ProductBundleWithOnlineProductsConstraint; id[unique=true,allownull=true]           ; severity(code,itemtype(code)); target[allownull=true]               ; type(code);
+                                                       ; ProductBundleWithOnlineProductsConstraint; ERROR:Severity               ; org.training.model.ProductBundleModel; ProductBundle;

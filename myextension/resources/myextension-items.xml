@@ -21,8 +21,8 @@
 			<sourceElement type="ProductBundle" qualifier="bundle" cardinality="one">
 				<modifiers read="true" write="true" search="true" optional="true"/>
 			</sourceElement>
-			<targetElement type="Product" qualifier="products" cardinality="many" collectiontype="set" ordered="false">
-				<modifiers read="true" write="true" search="true" optional="true" partof="true"/>
+			<targetElement type="Product" qualifier="products" cardinality="many" collectiontype="list" ordered="false">
+				<modifiers read="true" write="true" search="true" optional="true"/>
 			</targetElement>	
 		</relation>	
 	</relations>		
@@ -118,6 +118,20 @@
             <attributes>
                 <attribute qualifier="dateOfBirth" type="java.util.Date">
                     <persistence type="property"/>
+                </attribute>
+            </attributes>
+        </itemtype>
+
+        <itemtype code="ProductBundleWithOnlineProductsConstraint" extends="TypeConstraint">
+            <description>
+                Custom constraint which checks for online status of all Products in ProductBundle
+            </description>
+            <attributes>
+                <attribute qualifier="annotation" type="java.lang.Class" redeclare="true">
+                    <modifiers write="false" initial="true" optional="false"/>
+                    <defaultvalue>
+                        org.training.constraints.ProductBundleWithOnlineProducts.class
+                    </defaultvalue>
                 </attribute>
             </attributes>
         </itemtype>
