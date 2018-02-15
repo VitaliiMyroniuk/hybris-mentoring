@@ -1,0 +1,28 @@
+INSERT_UPDATE WorkflowTemplate; code[unique=true]  ; name[lang=en]        ; owner(uid); visibleForPrincipals(uid);
+                              ; NewUserRegistration; New User Registration; admin     ; admingroup;
+
+INSERT_UPDATE WorkflowActionTemplate; code[unique=true]; name[lang=en]          ; principalAssigned(uid); workflow(code)[unique=true]; sendEmail; actionType(code);
+                                    ; NUR_Confirmation ; Confirmation by manager; userManagerGroup      ; NewUserRegistration        ; false    ; start           ;
+                                    ; NUR_Approval     ; Approval by supervisor ; supervisorManagerGroup; NewUserRegistration        ; false    ; normal          ;
+                                    ; NUR_End          ; End                    ; admingroup            ; NewUserRegistration        ; false    ; end             ;
+
+INSERT_UPDATE AutomatedWorkflowActionTemplate; code[unique=true]; name[lang=en] ; principalAssigned(uid); workflow(code)[unique=true]; sendEmail; actionType(code); jobHandler;
+                                             ; NUR_Confirmed    ; User confirmed; userManagerGroup      ; NewUserRegistration        ; false    ; normal          ; confirmedUserActionJob;
+                                             ; NUR_Approved     ; User approved ; supervisorManagerGroup; NewUserRegistration        ; false    ; normal          ; approvedUserActionJob ;
+                                             ; NUR_Declined     ; User declined ; admingroup            ; NewUserRegistration        ; false    ; end             ; declinedUserActionJob ;
+
+INSERT_UPDATE WorkflowDecisionTemplate; code[unique=true]; name[lang=en]       ; actionTemplate(code);
+                                      ; NUR001           ; Confirm user        ; NUR_Confirmation    ;
+                                      ; NUR002           ; Decline user        ; NUR_Confirmation    ;
+                                      ; NUR003           ; Redirect to approval; NUR_Confirmed       ;
+                                      ; NUR004           ; Approve user        ; NUR_Approval        ;
+                                      ; NUR005           ; Decline user        ; NUR_Approval        ;
+                                      ; NUR006           ; End                 ; NUR_Approved        ;
+
+INSERT_UPDATE WorkflowActionTemplateLinkTemplateRelation; source(code)[unique=true]; target(code)[unique=true]; andConnectionTemplate; qualifier;
+                                                        ; NUR001                   ; NUR_Confirmed            ; false                ; WorkflowActionTemplateLinkTemplateRelation;
+                                                        ; NUR002                   ; NUR_Declined             ; false                ; WorkflowActionTemplateLinkTemplateRelation;
+                                                        ; NUR003                   ; NUR_Approval             ; false                ; WorkflowActionTemplateLinkTemplateRelation;
+                                                        ; NUR004                   ; NUR_Approved             ; false                ; WorkflowActionTemplateLinkTemplateRelation;
+                                                        ; NUR005                   ; NUR_Declined             ; false                ; WorkflowActionTemplateLinkTemplateRelation;
+                                                        ; NUR006                   ; NUR_End                  ; false                ; WorkflowActionTemplateLinkTemplateRelation;

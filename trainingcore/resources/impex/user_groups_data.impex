@@ -1,0 +1,7 @@
+INSERT_UPDATE UserGroup; uid[unique =true]     ; groups(uid);
+                       ; userManagerGroup      ; admingroup;
+                       ; supervisorManagerGroup; admingroup;
+
+INSERT_UPDATE Employee; uid[unique = true]; name             ; groups(uid);
+                      ; userManager       ; UserManager      ; userManagerGroup      ;
+                      ; supervisorManager ; SupervisorManager; supervisorManagerGroup;

@@ -33,6 +33,13 @@
             <value code="WHITE"/>
             <value code="YELLOW"/>
         </enumtype>
+
+        <enumtype code="RegistrationStatus" dynamic="true">
+            <value code="IN_PROGRESS"/>
+            <value code="CONFIRMED"/>
+            <value code="APPROVED"/>
+            <value code="DECLINED"/>
+        </enumtype>
     </enumtypes>
 
     <itemtypes>
@@ -45,6 +52,12 @@
                     <persistence type="property"/>
                     <modifiers optional="false"/>
                     <defaultvalue>false</defaultvalue>
+                </attribute>
+                <attribute qualifier="registrationStatus" type="RegistrationStatus">
+                    <defaultvalue>
+                        em().getEnumerationValue("RegistrationStatus", "IN_PROGRESS")
+                    </defaultvalue>
+                    <persistence type="property"/>
                 </attribute>
                 <attribute autocreate="true" qualifier="loginDisabled" type="boolean" redeclare="true">
                     <modifiers read="true" write="true" search="true" optional="false"/>

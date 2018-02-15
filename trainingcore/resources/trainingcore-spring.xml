@@ -565,4 +565,20 @@
 	<alias name="customUserModelService" alias="customerAccountService"/>
 	<bean id="customUserModelService" class="org.training.core.service.UserModelService" parent="defaultCustomerAccountService"/>
 
+    <!-- Advance registration jobs -->
+    <bean id="confirmedUserActionJob" class="org.training.core.workflow.ConfirmedUserActionJob">
+        <property name="modelService" ref="modelService" />
+    </bean>
+
+    <bean id="approvedUserActionJob" class="org.training.core.workflow.ApprovedUserActionJob">
+        <property name="modelService" ref="modelService" />
+    </bean>
+
+    <bean id="declinedUserActionJob" class="org.training.core.workflow.DeclinedUserActionJob">
+        <property name="modelService" ref="modelService" />
+    </bean>
+
+    <alias name="customDefaultCustomerAccountService" alias="customerAccountService"/>
+    <bean id="customDefaultCustomerAccountService" class="org.training.core.service.CustomDefaultCustomerAccountService" parent="defaultCustomerAccountService"/>
+
 </beans>
