@@ -68,6 +68,15 @@
             </attributes>
         </itemtype>
 
+        <itemtype code="AccountUpdateProcess" extends="BusinessProcess">
+            <attributes>
+                <attribute qualifier="recipientEmailAddress" type="java.lang.String">
+                    <modifiers initial="false" optional="true" write="true"/>
+                    <persistence type="property"/>
+                </attribute>
+            </attributes>
+        </itemtype>
+
         <!-- TypeGroups are for structure of this file only -->
 
         <typegroup name="Apparel">

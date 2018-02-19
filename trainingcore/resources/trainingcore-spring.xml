@@ -265,6 +265,12 @@
 	      class="de.hybris.platform.processengine.definition.ProcessDefinitionResource" >
 		<property name="resource" value="classpath:/trainingcore/processes/customerRegistrationEmailProcess.xml"/>
 	</bean>
+
+    <bean id="customerAccountUpdateEmailProcessDefinitionResource"
+          class="de.hybris.platform.processengine.definition.ProcessDefinitionResource" >
+        <property name="resource" value="classpath:/trainingcore/processes/customerAccountUpdateEmailProcess.xml"/>
+    </bean>
+
 	<bean id="forgottenPasswordEmailProcessDefinitionResource"
 	      class="de.hybris.platform.processengine.definition.ProcessDefinitionResource" >
 		<property name="resource" value="classpath:/trainingcore/processes/forgottenPasswordEmailProcess.xml"/>
@@ -325,6 +331,8 @@
 	<bean id="generateCustomerRegistrationEmail" parent="abstractGenerateEmailAction">
 		<property name="frontendTemplateName" value="CustomerRegistrationEmailTemplate"/>
 	</bean>
+
+    <bean id="generateCustomerAccountUpdateEmail" class="org.training.core.actions.GenerateEmailAction" scope="tenant" parent="abstractAction"/>
 
 	<bean id="generateForgottenPasswordEmail" parent="abstractGenerateEmailAction">
 		<property name="frontendTemplateName" value="ForgottenPasswordEmailTemplate"/>
