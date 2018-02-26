@@ -15,6 +15,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 public class UserModelService extends DefaultCustomerAccountService {
 
+    private static final String WORKFLOW_TEMPLATE_NAME = "NewUserRegistration";
+
     @Autowired
     private WorkflowService workflowService;
 
@@ -34,7 +36,7 @@ public class UserModelService extends DefaultCustomerAccountService {
     public void register(CustomerModel customerModel, String password) throws DuplicateUidException {
         super.register(customerModel, password);
 
-        WorkflowTemplateModel workflowTemplateModel = this.workflowTemplateService.getWorkflowTemplateForCode("NewUserRegistration");
+        WorkflowTemplateModel workflowTemplateModel = this.workflowTemplateService.getWorkflowTemplateForCode(WORKFLOW_TEMPLATE_NAME);
         WorkflowModel workflowModel = this.workflowService.createWorkflow(workflowTemplateModel, customerModel, userService.getAdminUser());
         modelService.save(workflowModel);
 

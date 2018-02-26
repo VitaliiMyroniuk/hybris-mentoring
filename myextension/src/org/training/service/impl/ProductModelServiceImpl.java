@@ -12,6 +12,8 @@ import java.util.List;
 
 public class ProductModelServiceImpl extends DefaultProductService implements ProductModelService {
 
+    private static final String ERROR_MESSAGE = "Could not update manufacturer name for products";
+
     @Autowired
     private ProductModelDao productModelDao;
 
@@ -39,7 +41,7 @@ public class ProductModelServiceImpl extends DefaultProductService implements Pr
                 }
             });
         } catch (Exception e) {
-            throw new RuntimeException("Could not update manufacturer name for products", e);
+            throw new RuntimeException(ERROR_MESSAGE, e);
         }
     }
 }
