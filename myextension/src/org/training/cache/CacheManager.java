@@ -5,11 +5,13 @@ import de.hybris.platform.core.model.ItemModel;
 import de.hybris.platform.regioncache.CacheController;
 import de.hybris.platform.regioncache.region.CacheRegion;
 import de.hybris.platform.util.Utilities;
+import javax.annotation.Resource;
 
 public class CacheManager {
 
     private static final String ENTITY_CACHE_REGION = "entityCacheRegion";
 
+    @Resource
     private CacheController cacheController;
 
     public void invalidateItemModel(ItemModel itemModel) {

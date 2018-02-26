@@ -121,5 +121,7 @@
         <property name="daysBeforeOffline" value="5"/>
         <property name="path" value="${HYBRIS_LOG_DIR}\product_codes.scv"/>
     </bean>
+
+    <bean id="cacheManager" class="org.training.cache.CacheManager"/>
 			
 </beans>
